@@ -4,27 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>E-commerce en construccion</h1>
-      <nav>
-        <a href="">Logo</a>
-        <a href="">Cuenta</a>
-        <a href="">Productos</a>
-        <a href="">Carrito</a>
+    <header class="header-container">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <img
+              class="nav-logo-img"
+              src="./assets/logo__large_plus.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <form class="nav-search">
+          <input type="text" placeholder="Buscar productos, marcas y mas..." />
+        </form>
+        <div class="nav-banner">
+          <a href="index.html"
+            ><img class="nav-banner-img" src="./assets/nav.jpg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-bot-container">
+        <a class="nav-bot-send" href="">
+          <span> Enviar a</span>
+          <span> Capital Federal</span>
+        </a>
+        <div class="nav-bot-item">
+          <a href="">Categorias</a>
+          <a href="">Ofertas</a>
+          <a href="">Historial</a>
+          <a href="">Supermercado</a>
+          <a href="">Vender</a>
+          <a href="">Ayuda</a>
+        </div>
+      </div>
+      <nav class="nav-bot-menu">
+        <a href="">Crea tu cuenta</a>
+        <a href="">Ingresa</a>
+        <a href="">Mis compras</a>
+        <a href=""></a>
       </nav>
     </header>
-    <main>
-      <div><img src="" alt="" /></div>
-      <div><img src="" alt="" /></div>
-      <div><img src="" alt="" /></div>
-      <div><img src="" alt="" /></div>
-      <div><img src="" alt="" /></div>
-      <div><img src="" alt="" /></div>
-    </main>
-
     <footer>Pagina hecha por Alexis Recalde</footer>
     <script src="./js/main.js"></script>
   </body>
