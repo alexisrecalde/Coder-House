@@ -12,18 +12,15 @@ img {
   width: 100%;
   height: 100%;
 }
+
 .header-container {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
   background-color: #fff159;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-evenly;
-  flex-direction: row;
-  padding: 0.5%;
+  padding: 0.4%;
 }
 .nav-logo-img {
   min-width: 134px;
@@ -47,53 +44,93 @@ img {
   max-width: 340px;
   max-height: 39px;
 }
-
+/**********************HEADER 2***************************/
 .nav-bot-container {
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0.4%;
 }
 
 .nav-bot-send {
-  max-width: 170px;
+  min-width: 134px;
+  min-height: 34px;
 }
 
-/**********************HEADER 2***************************/
-
-.nav-bot-container {
-  display: flex;
-
-  justify-content: center;
-  padding: 10px;
-}
 .nav-bot-send span {
   padding: 1px;
   display: block;
 }
 .nav-bot-send {
+  display: block;
   text-decoration: none;
   text-align: start;
-  width: 186px;
-  margin-left: 4.5%;
 }
 .nav-bot-item {
-  margin-left: 45px;
-  flex-grow: 1;
-  padding: 5px;
+  max-width: 600px;
+  min-width: 400px;
+  padding: 0 10px;
+  width: 100%;
+  margin-right: 50px;
+  margin-top: 20px;
 }
 .nav-bot-item a {
   color: rgba(51, 51, 51, 0.6);
   font-size: 17px;
   padding-right: 20px;
   text-decoration: none;
+  padding-right: 36px;
+}
+
+.nav-bot-menu {
+  padding: 0 10px;
+  max-width: 340px;
+  max-height: 39px;
+  margin-top: 20px;
 }
 .nav-bot-menu a {
   color: #333;
   text-decoration: none;
-}
-
-.nav-bot-menu {
-}
-
-.nav-bot-menu a {
   padding-right: 10px;
+}
+/*****************************SLIDER ************************/
+.slider-conteiner {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.slider-arrow-left,
+.slider-arrow-right {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  transform: translateY(-50%);
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+.slider-arrow-left {
+  left: 0px;
+}
+.slider-arrow-right {
+  right: 0px;
+}
+.slider-img {
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: 50%;
+}
+/*****************************QUERY************************/
+
+@media screen and (max-width: 1095px) {
+  /**********************HEADER***************************/
 }
