@@ -5,6 +5,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: #ebebeb;
 }
 
 /**********************HEADER***************************/
@@ -128,6 +129,34 @@ img {
 
   background-size: cover;
   background-position: 50%;
+}
+/*****************************PAYMENT METHODS************************/
+.payment-methods {
+  margin: 0 5%;
+}
+.payment-methods-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+}
+.payment-methods-item {
+  text-align: center;
+  background-color: #fff;
+  margin: 30px 0;
+}
+
+.payment-methods-item {
+  display: flex;
+  padding: 5%;
+}
+.payment-methods-svg {
+  margin: auto 0;
+  margin-right: 5%;
+}
+.payment-methods-title,
+.payment-methods-subtitle {
+  text-align: start;
+  margin: 10px 0;
 }
 /*****************************QUERY************************/
 
