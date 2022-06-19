@@ -99,7 +99,6 @@ img {
   width: 100%;
   height: 350px;
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 .slider-arrow-left,
@@ -126,7 +125,6 @@ img {
 .slider-img {
   width: 100%;
   height: 100%;
-
   background-size: cover;
   background-position: 50%;
 }
@@ -157,6 +155,56 @@ img {
 .payment-methods-subtitle {
   text-align: start;
   margin: 10px 0;
+}
+/*****************************SUBSCRIPTION************************/
+
+.subscription-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 5%;
+  background-color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.subscription-title {
+  background: linear-gradient(90deg, #a90f90 55%, #0c1a51);
+  color: #fff;
+  height: 90px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.subscription-title h3 {
+  margin: 2.5% 3%;
+  font-size: 26px;
+  font-weight: 600;
+}
+.subscription-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+}
+
+.subscription-benefits span {
+  grid-column: 1 / span 5;
+  font-size: 18px;
+  line-height: 18px;
+  margin: 2.5% 3%;
+}
+.subscription-benefits-items {
+  margin: 2.5% 8%;
+}
+.subscription-benefits-items {
+  display: flex;
+  flex-direction: row;
+}
+.subscription-benefits-items svg {
+  border-radius: 50px;
+}
+.subscription-img {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50px;
 }
 /*****************************QUERY************************/
 
