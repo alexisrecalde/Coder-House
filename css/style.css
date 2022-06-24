@@ -189,8 +189,51 @@ img {
   text-decoration: none;
   color: #3483fa;
 }
+/*****************************PRODUCTOS************************/
+.productos {
+  margin: 40px;
+}
+.productos-card-container {
+  cursor: pointer;
+}
+.productos-card {
+  width: 100%;
+  max-width: 224px;
+  max-height: 330px;
+  background-color: #fff;
+}
+.productos-card img {
+  max-width: 224px;
+  max-height: 224px;
+}
+.productos-card-img {
+  max-width: 124px;
+  max-height: 224px;
+}
+.product-text {
+  margin: 2px 10px;
+  padding: 10px;
+}
+.product-text-description {
+  opacity: 0;
+  margin: 2px 10px;
+  padding: 10px;
+}
+.productos-card:hover .product-text-description {
+  opacity: 1;
+  max-height: 360px;
+  margin: 0px 0px;
+  background-color: #fff;
+  padding: 3px 20px;
+}
+.productos-card:hover {
+  transition: height 0.1s ease-out;
+  box-shadow: 0 7px 16px 0rgba (0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
 /*****************************SUBSCRIPTION************************/
-
+.subscription {
+  margin-top: 250px;
+}
 .subscription-container {
   display: flex;
   flex-direction: column;

@@ -4,84 +4,84 @@ const productos = [
     nombre: "Auriculares",
     precio: 10000,
     desc: "Auriculares ",
-    img: "./assets/productos/auris1",
+    img: "./assets/productos/auris1.jpg",
   },
   {
     id: 02,
     nombre: "Auriculares",
     precio: 10000,
     desc: "Auriculares ",
-    img: "./assets/productos/auris2",
+    img: "./assets/productos/auris2.jpg",
   },
   {
     id: 03,
     nombre: "Auriculares",
     precio: 10000,
     desc: "Auriculares ",
-    img: "./assets/productos/auris3",
+    img: "./assets/productos/auris3.jpg",
   },
   {
     id: 04,
     nombre: "Auriculares",
     precio: 10000,
     desc: "Auriculares ",
-    img: "./assets/productos/auris4",
+    img: "./assets/productos/auris4.jpg",
   },
   {
     id: 05,
     nombre: "Celular",
     precio: 10000,
     desc: "Celular",
-    img: "./assets/productos/ceular1",
+    img: "./assets/productos/celular1.jpg",
   },
   {
     id: 06,
     nombre: "Celular",
     precio: 10000,
     desc: "Celular",
-    img: "./assets/productos/ceular2",
+    img: "./assets/productos/celular2.jpg",
   },
   {
     id: 07,
     nombre: "Celular",
     precio: 10000,
     desc: "Celular",
-    img: "./assets/productos/ceular3",
+    img: "./assets/productos/celular3.jpg",
   },
   {
     id: 08,
     nombre: "Celular",
     precio: 10000,
     desc: "Celular ",
-    img: "./assets/productos/ceular4",
+    img: "./assets/productos/celular4.jpg",
   },
   {
     id: 09,
     nombre: "Computadora",
     precio: 10000,
     desc: "Compu ",
-    img: "./assets/productos/compu1",
+    img: "./assets/productos/compu1.jpg",
   },
   {
     id: 10,
     nombre: "Computadora",
     precio: 10000,
     desc: "Compu2",
-    img: "./assets/productos/compu2",
+    img: "./assets/productos/compu2.jpg",
   },
   {
     id: 11,
     nombre: "Computadora",
     precio: 10000,
     desc: "Compu img:",
-    img: "./assets/productos/compu3",
+    img: "./assets/productos/compu3.jpg",
   },
   {
     id: 12,
     nombre: "Computadora",
     precio: 10000,
     desc: "Compu img:",
-    img: "./assets/productos/compu4",
+    img: "./assets/productos/compu4.jpg",
   },
 ];
 //prueba de recorrido
@@ -186,4 +186,26 @@ closeModal.addEventListener("click", () => {
 
 modalContainer.addEventListener("click", () => {
   closeModal.click();
+});
+
+/********************PRODUCTOS**********************/
+
+const productosContainer = document.querySelector(".productos-card-container");
+
+productos.forEach((item) => {
+  const div = document.createElement("div");
+  div.classList.add("productos-card");
+
+  div.innerHTML = `
+      
+         <img src=${item.img} alt="" />
+          <hr />
+          <h3 class="product-text">${item.precio}</h3>
+          <p class="product-text">Envio gratis</p>
+          <p class="product-text product-text-description">
+            Lorem ipsum dolor sit amet consectetur
+          </p>
+`;
+  console.log(div);
+  productosContainer.append(div);
 });
