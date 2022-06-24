@@ -1,37 +1,87 @@
 const productos = [
   {
     id: 01,
-    nombre: "producto 1",
-    precio: 100,
-    cantidad: 0,
+    nombre: "Auriculares",
+    precio: 10000,
+    desc: "Auriculares ",
+    img: "./assets/productos/auris1",
   },
-
   {
     id: 02,
-    nombre: "producto 2",
-    precio: 100,
-    cantidad: 0,
+    nombre: "Auriculares",
+    precio: 10000,
+    desc: "Auriculares ",
+    img: "./assets/productos/auris2",
   },
-
   {
     id: 03,
-    nombre: "producto 3",
-    precio: 100,
-    cantidad: 0,
+    nombre: "Auriculares",
+    precio: 10000,
+    desc: "Auriculares ",
+    img: "./assets/productos/auris3",
   },
-
   {
     id: 04,
-    nombre: "producto 4",
-    precio: 100,
-    cantidad: 0,
+    nombre: "Auriculares",
+    precio: 10000,
+    desc: "Auriculares ",
+    img: "./assets/productos/auris4",
   },
-
   {
     id: 05,
-    nombre: "producto 5",
-    precio: 100,
-    cantidad: 0,
+    nombre: "Celular",
+    precio: 10000,
+    desc: "Celular",
+    img: "./assets/productos/ceular1",
+  },
+  {
+    id: 06,
+    nombre: "Celular",
+    precio: 10000,
+    desc: "Celular",
+    img: "./assets/productos/ceular2",
+  },
+  {
+    id: 07,
+    nombre: "Celular",
+    precio: 10000,
+    desc: "Celular",
+    img: "./assets/productos/ceular3",
+  },
+  {
+    id: 08,
+    nombre: "Celular",
+    precio: 10000,
+    desc: "Celular ",
+    img: "./assets/productos/ceular4",
+  },
+  {
+    id: 09,
+    nombre: "Computadora",
+    precio: 10000,
+    desc: "Compu ",
+    img: "./assets/productos/compu1",
+  },
+  {
+    id: 10,
+    nombre: "Computadora",
+    precio: 10000,
+    desc: "Compu2",
+    img: "./assets/productos/compu2",
+  },
+  {
+    id: 11,
+    nombre: "Computadora",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/compu3",
+  },
+  {
+    id: 12,
+    nombre: "Computadora",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/compu4",
   },
 ];
 //prueba de recorrido
@@ -119,3 +169,21 @@ sliderImgRight.addEventListener("click", () => {
   sliderImg.style.backgroundImage = `url(" ${sliderImgArray[position]}")`;
 });
 console.log(sliderImgArray.length);
+
+/********************MODAL**********************/
+
+const modalContainer = document.querySelector(".modal-container");
+const openModal = document.getElementById("open-modal");
+const closeModal = document.querySelector("#close-modal");
+
+openModal.addEventListener("click", (event) => {
+  event.preventDefault(modalContainer.classList.toggle("modal-visible"));
+});
+
+closeModal.addEventListener("click", () => {
+  modalContainer.classList.toggle("modal-visible");
+});
+
+modalContainer.addEventListener("click", () => {
+  closeModal.click();
+});
