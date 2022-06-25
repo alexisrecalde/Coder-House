@@ -184,10 +184,6 @@ closeModal.addEventListener("click", () => {
   modalContainer.classList.toggle("modal-visible");
 });
 
-modalContainer.addEventListener("click", () => {
-  closeModal.click();
-});
-
 /********************PRODUCTOS**********************/
 
 const productosContainer = document.querySelector(".productos-card-container");
@@ -198,13 +194,20 @@ productos.forEach((item) => {
 
   div.innerHTML = `
       
-         <img src=${item.img} alt="" />
-          <hr />
-          <h3 class="product-text">${item.precio}</h3>
-          <p class="product-text">Envio gratis</p>
-          <p class="product-text product-text-description">
-            Lorem ipsum dolor sit amet consectetur
-          </p>
+       <img
+              class="productos-card-img"
+              src="${item.img}"
+              alt=""
+            />
+            <hr />
+            <h3 class="product-text">${item.precio}</h3>
+            <p class="product-text">Envio gratis</p>
+            <p class="product-text product-text-description">
+              Lorem ipsum dolor sit amet consectetur
+            </p>
+            <button class="icon-btn add-btn">
+              <div class="add-icon"></div>
+            </button>
 `;
   console.log(div);
   productosContainer.append(div);
