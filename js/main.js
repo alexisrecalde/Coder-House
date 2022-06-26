@@ -5,6 +5,7 @@ const productos = [
     precio: 10000,
     desc: "Auriculares ",
     img: "./assets/productos/auris1.jpg",
+    cantidad: 0,
   },
   {
     id: 02,
@@ -12,6 +13,7 @@ const productos = [
     precio: 10000,
     desc: "Auriculares ",
     img: "./assets/productos/auris2.jpg",
+    cantidad: 0,
   },
   {
     id: 03,
@@ -19,6 +21,7 @@ const productos = [
     precio: 10000,
     desc: "Auriculares ",
     img: "./assets/productos/auris3.jpg",
+    cantidad: 0,
   },
   {
     id: 04,
@@ -26,6 +29,7 @@ const productos = [
     precio: 10000,
     desc: "Auriculares ",
     img: "./assets/productos/auris4.jpg",
+    cantidad: 0,
   },
   {
     id: 05,
@@ -33,6 +37,7 @@ const productos = [
     precio: 10000,
     desc: "Celular",
     img: "./assets/productos/celular1.jpg",
+    cantidad: 0,
   },
   {
     id: 06,
@@ -40,6 +45,7 @@ const productos = [
     precio: 10000,
     desc: "Celular",
     img: "./assets/productos/celular2.jpg",
+    cantidad: 0,
   },
   {
     id: 07,
@@ -47,6 +53,7 @@ const productos = [
     precio: 10000,
     desc: "Celular",
     img: "./assets/productos/celular3.jpg",
+    cantidad: 0,
   },
   {
     id: 08,
@@ -54,6 +61,7 @@ const productos = [
     precio: 10000,
     desc: "Celular ",
     img: "./assets/productos/celular4.jpg",
+    cantidad: 0,
   },
   {
     id: 09,
@@ -61,6 +69,7 @@ const productos = [
     precio: 10000,
     desc: "Compu ",
     img: "./assets/productos/compu1.jpg",
+    cantidad: 0,
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ const productos = [
     precio: 10000,
     desc: "Compu2",
     img: "./assets/productos/compu2.jpg",
+    cantidad: 0,
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ const productos = [
     precio: 10000,
     desc: "Compu img:",
     img: "./assets/productos/compu3.jpg",
+    cantidad: 0,
   },
   {
     id: 12,
@@ -82,6 +93,7 @@ const productos = [
     precio: 10000,
     desc: "Compu img:",
     img: "./assets/productos/compu4.jpg",
+    cantidad: 0,
   },
 ];
 
@@ -156,7 +168,7 @@ productos.forEach((item) => {
             <p class="product-text product-text-description">
               Lorem ipsum dolor sit amet consectetur
             </p>
-            <button class="icon-btn add-btn">
+            <button onclick="agregarAlCarrito(${item.id})" class="icon-btn add-btn">
               <div class="add-icon"></div>
             </button>
 `;
@@ -165,19 +177,12 @@ productos.forEach((item) => {
 });
 
 /********************CARRITO**********************/
-//prueba de recorrido
-for (const e of productos) {
-  console.log(e);
-}
 const carrito = [];
+const carritoContainer = document.querySelector("#carrito-container");
 
 function agregarAlCarrito(id) {
-  let producto = productos.find((producto) => producto.id == id);
-
-  let productoEnCarrito = carrito.find((producto) => producto.id == id);
-
-  console.log(producto);
-  console.log(productoEnCarrito);
+  let producto = productos.find((prod) => prod.id === id);
+  let productoEnCarrito = carrito.find((producto) => producto.id === id);
 
   //si el producto ya existe en el carrito suma la cantidad, sino lo agrega al array carrito
   if (productoEnCarrito) {
@@ -186,15 +191,9 @@ function agregarAlCarrito(id) {
     carrito.push(producto);
     producto.cantidad = 1;
   }
+  renderCarrito();
+  console.log(carrito);
 }
-
-agregarAlCarrito(01);
-agregarAlCarrito(01);
-agregarAlCarrito(02);
-agregarAlCarrito(01);
-agregarAlCarrito(03);
-agregarAlCarrito(03);
-console.log(carrito);
 
 function calcularTotal() {
   let total = 0;
@@ -205,12 +204,45 @@ function calcularTotal() {
   console.log(total);
 }
 
-calcularTotal();
+const renderCarrito = () => {
+  carrito.forEach((item) => {
+    const div = document.createElement("div");
+    div.classList.add("producto-carrito");
 
+    div.innerHTML = `
+         <p>${item.nombre}</p>
+            <p>${item.precio}</p>
+
+            <button class="noselect">
+              <span class="text">Eliminar</span
+              ><span class="icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+
+     
+  `;
+
+    carritoContainer.append(div);
+    console.log(div);
+  });
+};
+
+//boton agregar al carito
 const botonAgregarAlCarrito = document.querySelector(".add-btn");
-const contdorCarritos = document.querySelector("#contador-carrito");
-const precioTotal = document.querySelector("#precio-total");""
+const contadorCarritos = document.querySelector("#contador-carrito");
+const precioTotal = document.querySelector("#precio-total");
+("");
 
-console.log(botonAgregarAlCarrito, contdorCarritos);
+console.log(botonAgregarAlCarrito, contadorCarritos);
 
 botonAgregarAlCarrito.addEventListener("click", agregarAlCarrito);
