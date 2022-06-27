@@ -97,7 +97,7 @@ const productos = [
   },
 ];
 
-/********************SLIDER**********************/
+/*************************SLIDER***************************/
 
 const sliderImgArray = [
   "./assets/banner1.jpg",
@@ -133,7 +133,7 @@ sliderImgRight.addEventListener("click", () => {
 });
 console.log(sliderImgArray.length);
 
-/********************MODAL**********************/
+/*************************MODAL***************************/
 
 const modalContainer = document.querySelector(".modal-container");
 const openModal = document.getElementById("open-modal");
@@ -147,7 +147,7 @@ closeModal.addEventListener("click", () => {
   modalContainer.classList.toggle("modal-visible");
 });
 
-/********************PRODUCTOS**********************/
+/*************************PRODUCTOS***************************/
 
 const productosContainer = document.querySelector(".productos-card-container");
 
@@ -176,7 +176,7 @@ productos.forEach((item) => {
   productosContainer.append(div);
 });
 
-/********************CARRITO**********************/
+/*************************CARRITO***************************/
 const carrito = [];
 const carritoContainer = document.querySelector("#carrito-container");
 
@@ -192,28 +192,24 @@ function agregarAlCarrito(id) {
     producto.cantidad = 1;
   }
   renderCarrito();
-  console.log(carrito);
+  calcularTotal();
+  renderContadorCarrito();
 }
 
-function calcularTotal() {
-  let total = 0;
-  for (const e of carrito) {
-    let precioProducto = e.cantidad * e.precio;
-    total += precioProducto;
-  }
-  console.log(total);
-}
-
+//renderizar modal de carrito
 const renderCarrito = () => {
+  carritoContainer.innerHTML = ``;
+
   carrito.forEach((item) => {
     const div = document.createElement("div");
     div.classList.add("producto-carrito");
 
     div.innerHTML = `
          <p>${item.nombre}</p>
+         <p>${item.cantidad}</p>
             <p>${item.precio}</p>
 
-            <button class="noselect">
+            <button onclick=removerDelCarrito(${item.id}) class="noselect">
               <span class="text">Eliminar</span
               ><span class="icon"
                 ><svg
@@ -237,12 +233,40 @@ const renderCarrito = () => {
   });
 };
 
-//boton agregar al carito
-const botonAgregarAlCarrito = document.querySelector(".add-btn");
-const contadorCarritos = document.querySelector("#contador-carrito");
-const precioTotal = document.querySelector("#precio-total");
-("");
+//renderizar precio total
 
-console.log(botonAgregarAlCarrito, contadorCarritos);
+const precioTotal = document.querySelector(".precio-total");
 
-botonAgregarAlCarrito.addEventListener("click", agregarAlCarrito);
+function calcularTotal() {
+  let total = 0;
+  for (const e of carrito) {
+    let precioProducto = e.cantidad * e.precio;
+    total += precioProducto;
+  }
+
+  precioTotal.innerHTML = `
+         <p class="precio-total">
+          Precio total: $ <span id="precio-total">${total}</span>
+        </p>
+`;
+}
+
+//renderizar contador de carrito
+
+const contadorCarrito = document.querySelector("#contador-carrito");
+
+const renderContadorCarrito = () => {
+  contadorCarrito.innerHTML = carrito.length;
+};
+
+//remover elemento del carrito
+
+const removerDelCarrito = (id) => {
+  let producto = carrito.find((prod) => prod.id === id);
+  let indice = carrito.indexOf(producto);
+  carrito.splice(indice, 1);
+  console.log(indice);
+  renderCarrito();
+  calcularTotal();
+  renderContadorCarrito();
+};
