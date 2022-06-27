@@ -177,12 +177,16 @@ productos.forEach((item) => {
 });
 
 /*************************CARRITO***************************/
-const carrito = [];
+let carrito;
+const carritoEnLS = JSON.parse(localStorage.getItem("carrito"));
+
 const carritoContainer = document.querySelector("#carrito-container");
 
 function agregarAlCarrito(id) {
   let producto = productos.find((prod) => prod.id === id);
   let productoEnCarrito = carrito.find((producto) => producto.id === id);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 
   //si el producto ya existe en el carrito suma la cantidad, sino lo agrega al array carrito
   if (productoEnCarrito) {
@@ -205,9 +209,9 @@ const renderCarrito = () => {
     div.classList.add("producto-carrito");
 
     div.innerHTML = `
-         <p>${item.nombre}</p>
-         <p>${item.cantidad}</p>
-            <p>${item.precio}</p>
+         <p class="producto-texto">${item.nombre}</p>
+         <p class="producto-texto">${item.cantidad}</p>
+            <p class="producto-texto">${item.precio}</p>
 
             <button onclick=removerDelCarrito(${item.id}) class="noselect">
               <span class="text">Eliminar</span
@@ -264,9 +268,20 @@ const renderContadorCarrito = () => {
 const removerDelCarrito = (id) => {
   let producto = carrito.find((prod) => prod.id === id);
   let indice = carrito.indexOf(producto);
+
   carrito.splice(indice, 1);
-  console.log(indice);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
   renderCarrito();
   calcularTotal();
   renderContadorCarrito();
 };
+//actualizando LS
+if (carritoEnLS) {
+  carrito = carritoEnLS;
+  renderCarrito();
+  calcularTotal();
+  renderContadorCarrito();
+} else {
+  carrito = [];
+}

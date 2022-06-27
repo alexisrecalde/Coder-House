@@ -39,7 +39,6 @@ img {
 .nav-search {
   max-width: 600px;
   min-width: 400px;
-
   padding: 0 10px;
   width: 100%;
 }
@@ -364,6 +363,11 @@ img {
   position: relative;
   padding: 2%;
   overflow-y: scroll;
+}
+
+.producto-texto {
+  width: 150px;
+  text-align: start;
 }
 
 /* From uiverse.io by @satyamchaudharydev */
