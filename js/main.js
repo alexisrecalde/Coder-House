@@ -181,6 +181,7 @@ let carrito;
 const carritoEnLS = JSON.parse(localStorage.getItem("carrito"));
 
 const carritoContainer = document.querySelector("#carrito-container");
+const addBtn = document.querySelector(".add-btn");
 
 function agregarAlCarrito(id) {
   let producto = productos.find((prod) => prod.id === id);
@@ -198,7 +199,20 @@ function agregarAlCarrito(id) {
   renderCarrito();
   calcularTotal();
   renderContadorCarrito();
+  msgAgregado(producto.nombre);
 }
+
+const msgAgregado = (producto) => {
+  Toastify({
+    text: `se agrego ${producto}`,
+    duration: 2500,
+    className: "info",
+    style: {
+      background: "#fff159",
+      color: "black",
+    },
+  }).showToast();
+};
 
 //renderizar modal de carrito
 const renderCarrito = () => {
