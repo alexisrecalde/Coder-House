@@ -122,7 +122,8 @@ img {
 }
 
 .slider-arrow-left,
-.slider-arrow-right {
+.slider-arrow-right,
+.slider-arrow-right-productos {
   position: absolute;
   top: 50%;
   width: 50px;
@@ -139,7 +140,8 @@ img {
 .slider-arrow-left {
   left: 0px;
 }
-.slider-arrow-right {
+.slider-arrow-right,
+.slider-arrow-right-productos {
   right: 0px;
 }
 .slider-img {
@@ -163,7 +165,7 @@ img {
 .payment-methods-item {
   text-align: center;
   background-color: #fff;
-  margin: 40px 0px;
+  margin: 60px 0px;
 }
 
 .payment-methods-item {
@@ -189,15 +191,29 @@ img {
   color: #3483fa;
 }
 /*****************************PRODUCTOS************************/
+.productos-title {
+  font-size: 26px;
+  font-style: normal;
+  font-weight: lighter;
+  color: #666;
+  display: inline-block;
+}
+.productos-subtitle {
+  text-decoration: none;
+  font-size: 14px;
+  color: #3483fa;
+  margin-left: 5px;
+  margin-bottom: 1px;
+}
 .productos {
-  margin: 40px;
+  margin: 0 5%;
 }
 .productos-card-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
-  padding: 30px;
 }
 .productos-card {
   width: 100%;
@@ -206,7 +222,6 @@ img {
   background-color: #fff;
   box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
   margin-bottom: 50px;
-  margin-left: 30px;
   cursor: pointer;
 }
 
@@ -321,10 +336,12 @@ img {
 }
 .subscription-benefits-items {
   margin: 2.5% 8%;
-}
-.subscription-benefits-items {
   display: flex;
   flex-direction: row;
+}
+.subscription-benefits-subtitle {
+  font-weight: 100;
+  margin: auto 0;
 }
 .subscription-benefits-items svg {
   border-radius: 50px;

@@ -148,10 +148,11 @@ closeModal.addEventListener("click", () => {
 });
 
 /*************************PRODUCTOS***************************/
-
+let positionStart = 0;
+let positionEnd = 5;
 const productosContainer = document.querySelector(".productos-card-container");
 
-productos.forEach((item) => {
+productos.slice(positionStart, positionEnd).forEach((item) => {
   const div = document.createElement("div");
   div.classList.add("productos-card");
 
@@ -299,3 +300,16 @@ if (carritoEnLS) {
 } else {
   carrito = [];
 }
+/***************************SLIDER PRODUCTOS*************************/
+
+const sliderImgRightProductos = document.querySelector(
+  ".slider-arrow-right-productos"
+);
+
+sliderImgRightProductos.addEventListener("click", () => {
+  if (position == 0) {
+    positionEnd = productos.length - 1;
+  } else {
+    position--;
+  }
+});
