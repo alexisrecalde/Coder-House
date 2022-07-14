@@ -298,6 +298,34 @@ img {
 .icon-btn:hover {
   background-color: #f2f2f2;
 }
+.swiper {
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  background: #fff;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev {
+  /* opacity: 0; */
+  left: 2px;
+}
+.swiper-button-next {
+  /* opacity: 0; */
+  right: 2px;
+}
+/* .arrow-visible {
+  opacity: 1;
+  visibility: visible;
+} */
 /*****************************SUBSCRIPTION************************/
 .subscription {
   margin-top: 250px;

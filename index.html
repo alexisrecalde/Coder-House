@@ -7,11 +7,17 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="./css/normalize.css" />
+
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -65,8 +71,8 @@
     </header>
     <section class="slider">
       <div class="slider-conteiner">
-        <div class="slider-arrow-left" id="arrow-left"><</div>
-        <div class="slider-arrow-right" id="arrow-right">></div>
+        <div class="swiper-button-prev" id="arrow-left"></div>
+        <div class="swiper-button-next" id="arrow-right"></div>
         <div class="slider-img"></div>
       </div>
     </section>
@@ -320,14 +326,12 @@
       </div>
     </section>
 
-    <section class="productos">
-      <div class="productos-container">
+    <section class="productos-section">
+      <div class="swiper mySwiper productos">
         <h3 class="productos-title">Ofertas</h3>
         <a class="productos-subtitle" href="">Ver todas</a>
 
-        <div class="productos-card-container">
-          <div class="slider-arrow-right-productos" id="arrow-right">></div>
-
+        <div class="swiper-wrapper">
           <!-- <div class="productos-card">
             <img
               class="productos-card-img"
@@ -345,6 +349,8 @@
             </button>
           </div> -->
         </div>
+        <div class="swiper-button-next arrow-container-next"></div>
+        <div class="swiper-button-prev arrow-container-prev"></div>
       </div>
     </section>
 
@@ -517,10 +523,11 @@
 
     <footer>Pagina hecha por Alexis Recalde</footer>
 
-    <script src="./js/main.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

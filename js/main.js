@@ -95,6 +95,70 @@ const productos = [
     img: "./assets/productos/compu4.jpg",
     cantidad: 0,
   },
+  {
+    id: 13,
+    nombre: "Televisor",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/tele1.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 14,
+    nombre: "Televisor",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/tele2.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 15,
+    nombre: "Televisor",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/tele3.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 16,
+    nombre: "Televisor",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/tele4.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 17,
+    nombre: "Bicicleta",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/bici1.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 17,
+    nombre: "Bicicleta",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/bici2.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 17,
+    nombre: "Bicicleta",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/bici3.jpg",
+    cantidad: 0,
+  },
+  {
+    id: 17,
+    nombre: "Bicicleta",
+    precio: 10000,
+    desc: "Compu img:",
+    img: "./assets/productos/bici4.jpg",
+    cantidad: 0,
+  },
 ];
 
 /*************************SLIDER***************************/
@@ -148,13 +212,23 @@ closeModal.addEventListener("click", () => {
 });
 
 /*************************PRODUCTOS***************************/
-let positionStart = 0;
-let positionEnd = 5;
-const productosContainer = document.querySelector(".productos-card-container");
 
-productos.slice(positionStart, positionEnd).forEach((item) => {
+const arrowVisible = document.querySelector(".swiper");
+const arrowContainerNext = document.querySelector(".arrow-container-next");
+const arrowContainerPrev = document.querySelector(".arrow-container-prev");
+
+const productosContainer = document.querySelector(".swiper-wrapper");
+
+//
+
+// arrowVisible.addEventListener("mouseover", (event) => {
+//   event.preventDefault(arrowContainerNext.classList.toggle("arrow-visible"));
+//   event.preventDefault(arrowContainerPrev.classList.toggle("arrow-visible"));
+// });
+
+productos.forEach((item) => {
   const div = document.createElement("div");
-  div.classList.add("productos-card");
+  div.classList.add("swiper-slide");
 
   div.innerHTML = `
       
@@ -175,6 +249,21 @@ productos.slice(positionStart, positionEnd).forEach((item) => {
 `;
   console.log(div);
   productosContainer.append(div);
+});
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 5,
+  spaceBetween: 50,
+  slidesPerGroup: 5,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     clickable: true,
+  //   },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
 /*************************CARRITO***************************/
@@ -300,16 +389,3 @@ if (carritoEnLS) {
 } else {
   carrito = [];
 }
-/***************************SLIDER PRODUCTOS*************************/
-
-const sliderImgRightProductos = document.querySelector(
-  ".slider-arrow-right-productos"
-);
-
-sliderImgRightProductos.addEventListener("click", () => {
-  if (position == 0) {
-    positionEnd = productos.length - 1;
-  } else {
-    position--;
-  }
-});
