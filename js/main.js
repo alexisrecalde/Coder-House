@@ -1,166 +1,3 @@
-const productos = [
-  {
-    id: 01,
-    nombre: "Auriculares",
-    precio: 10000,
-    desc: "Auriculares ",
-    img: "./assets/productos/auris1.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 02,
-    nombre: "Auriculares",
-    precio: 10000,
-    desc: "Auriculares ",
-    img: "./assets/productos/auris2.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 03,
-    nombre: "Auriculares",
-    precio: 10000,
-    desc: "Auriculares ",
-    img: "./assets/productos/auris3.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 04,
-    nombre: "Auriculares",
-    precio: 10000,
-    desc: "Auriculares ",
-    img: "./assets/productos/auris4.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 05,
-    nombre: "Celular",
-    precio: 10000,
-    desc: "Celular",
-    img: "./assets/productos/celular1.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 06,
-    nombre: "Celular",
-    precio: 10000,
-    desc: "Celular",
-    img: "./assets/productos/celular2.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 07,
-    nombre: "Celular",
-    precio: 10000,
-    desc: "Celular",
-    img: "./assets/productos/celular3.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 08,
-    nombre: "Celular",
-    precio: 10000,
-    desc: "Celular ",
-    img: "./assets/productos/celular4.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 09,
-    nombre: "Computadora",
-    precio: 10000,
-    desc: "Compu ",
-    img: "./assets/productos/compu1.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 10,
-    nombre: "Computadora",
-    precio: 10000,
-    desc: "Compu2",
-    img: "./assets/productos/compu2.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 11,
-    nombre: "Computadora",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/compu3.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 12,
-    nombre: "Computadora",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/compu4.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 13,
-    nombre: "Televisor",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/tele1.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 14,
-    nombre: "Televisor",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/tele2.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 15,
-    nombre: "Televisor",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/tele3.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 16,
-    nombre: "Televisor",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/tele4.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 17,
-    nombre: "Bicicleta",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/bici1.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 17,
-    nombre: "Bicicleta",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/bici2.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 17,
-    nombre: "Bicicleta",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/bici3.jpg",
-    cantidad: 0,
-  },
-  {
-    id: 17,
-    nombre: "Bicicleta",
-    precio: 10000,
-    desc: "Compu img:",
-    img: "./assets/productos/bici4.jpg",
-    cantidad: 0,
-  },
-];
-
 /*************************SLIDER***************************/
 
 const sliderImgArray = [
@@ -219,37 +56,46 @@ const arrowContainerPrev = document.querySelector(".arrow-container-prev");
 
 const productosContainer = document.querySelector(".swiper-wrapper");
 
-//
+let stock = [];
+
+fetch("../stock.JSON")
+  .then((resp) => resp.json())
+  .then((data) => {
+    stock = data;
+
+    stock.forEach((item) => {
+      const div = document.createElement("div");
+      div.classList.add("swiper-slide");
+
+      div.innerHTML = `
+    
+          <img
+                  class="productos-card-img"
+                   src="${item.img}"
+                   alt=""
+          />
+                <hr />
+                 <h3 class="product-text">${item.precio}</h3>
+                 <p class="product-text">Envio gratis</p>
+                 <p class="product-text product-text-description">
+                   Lorem ipsum dolor sit amet consectetur
+                 </p>
+                 <button onclick="agregarAlCarrito(${item.id})" class="icon-btn add-btn">
+                   <div class="add-icon"></div>
+                 </button>
+     `;
+      console.log(div);
+      productosContainer.append(div);
+    });
+  });
+
+//hover de productos(no funciona bien)
 
 // arrowVisible.addEventListener("mouseover", (event) => {
 //   event.preventDefault(arrowContainerNext.classList.toggle("arrow-visible"));
 //   event.preventDefault(arrowContainerPrev.classList.toggle("arrow-visible"));
 // });
 
-productos.forEach((item) => {
-  const div = document.createElement("div");
-  div.classList.add("swiper-slide");
-
-  div.innerHTML = `
-      
-       <img
-              class="productos-card-img"
-              src="${item.img}"
-              alt=""
-            />
-            <hr />
-            <h3 class="product-text">${item.precio}</h3>
-            <p class="product-text">Envio gratis</p>
-            <p class="product-text product-text-description">
-              Lorem ipsum dolor sit amet consectetur
-            </p>
-            <button onclick="agregarAlCarrito(${item.id})" class="icon-btn add-btn">
-              <div class="add-icon"></div>
-            </button>
-`;
-  console.log(div);
-  productosContainer.append(div);
-});
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 5,
   spaceBetween: 50,
@@ -274,7 +120,7 @@ const carritoContainer = document.querySelector("#carrito-container");
 const addBtn = document.querySelector(".add-btn");
 
 function agregarAlCarrito(id) {
-  let producto = productos.find((prod) => prod.id === id);
+  let producto = stock.find((prod) => prod.id === id);
   let productoEnCarrito = carrito.find((producto) => producto.id === id);
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -333,7 +179,7 @@ const renderCarrito = () => {
               </span>
             </button>
 
-     
+
   `;
 
     carritoContainer.append(div);

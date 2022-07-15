@@ -211,7 +211,7 @@ img {
 .productos-card-container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
   justify-content: space-between;
   max-width: 1200px;
 }

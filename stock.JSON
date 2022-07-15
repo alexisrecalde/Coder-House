@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "nombre": "Auriculares",
+    "precio": 10000,
+    "desc": "Auriculares ",
+    "img": "./assets/productos/auris1.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 2,
+    "nombre": "Auriculares",
+    "precio": 10000,
+    "desc": "Auriculares ",
+    "img": "./assets/productos/auris2.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 3,
+    "nombre": "Auriculares",
+    "precio": 10000,
+    "desc": "Auriculares ",
+    "img": "./assets/productos/auris3.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 4,
+    "nombre": "Auriculares",
+    "precio": 10000,
+    "desc": "Auriculares ",
+    "img": "./assets/productos/auris4.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 5,
+    "nombre": "Celular",
+    "precio": 10000,
+    "desc": "Celular",
+    "img": "./assets/productos/celular1.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 6,
+    "nombre": "Celular",
+    "precio": 10000,
+    "desc": "Celular",
+    "img": "./assets/productos/celular2.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 7,
+    "nombre": "Celular",
+    "precio": 10000,
+    "desc": "Celular",
+    "img": "./assets/productos/celular3.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 8,
+    "nombre": "Celular",
+    "precio": 10000,
+    "desc": "Celular ",
+    "img": "./assets/productos/celular4.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 9,
+    "nombre": "Computadora",
+    "precio": 10000,
+    "desc": "Compu ",
+    "img": "./assets/productos/compu1.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 10,
+    "nombre": "Computadora",
+    "precio": 10000,
+    "desc": "Compu2",
+    "img": "./assets/productos/compu2.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 11,
+    "nombre": "Computadora",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/compu3.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 12,
+    "nombre": "Computadora",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/compu4.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 13,
+    "nombre": "Televisor",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/tele1.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 14,
+    "nombre": "Televisor",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/tele2.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 15,
+    "nombre": "Televisor",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/tele3.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 16,
+    "nombre": "Televisor",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/tele4.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 17,
+    "nombre": "Bicicleta",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/bici1.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 17,
+    "nombre": "Bicicleta",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/bici2.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 17,
+    "nombre": "Bicicleta",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/bici3.jpg",
+    "cantidad": 0
+  },
+  {
+    "id": 17,
+    "nombre": "Bicicleta",
+    "precio": 10000,
+    "desc": "Compu img:",
+    "img": "./assets/productos/bici4.jpg",
+    "cantidad": 0
+  }
+]
